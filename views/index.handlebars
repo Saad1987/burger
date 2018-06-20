@@ -1,0 +1,48 @@
+<div class="wrapper">
+<div class="titleWrapper"><h1>Eat-Da-Burger!</h1>
+<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoGgwDprAU320eCmlpHmt6HyyVpCGLKP0xD3JTq_b4cMPdUlDZ0g" height="100px"></div></center>
+
+<div class="noDevouredWrapper">
+<h2>New burger ?</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+    
+
+  <li class="nodevoured">
+    {{burger_name}}
+	<button class="change-status" data-id="{{id}}" >Devour it ?</button>
+  	<button class="delete-burger" data-id="{{id}}">DELETE!</button>
+</li>
+
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+<div class="devouredWrapper">
+<h2>You ate it already !</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+   <li class="devoured">{{burger_name}}</li> 
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+</div>
+<div class="formWrapper">
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="burgerName">
+  </div>
+
+ 
+  <button type="submit">Add a Burger</button>
+</form>
+</div>
